@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты и технический запрос — NM Engineering</title>
+  <meta name="description" content="Отправьте технический запрос команде NM Engineering: подбор двигателя, модернизация или индивидуальная разработка.">
+  <meta name="theme-color" content="#EAEAEA">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body data-page="contacts">
+  <a class="skip-link" href="#main">К содержимому</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-box" aria-label="NM Engineering — на главную">
+        <span class="logo-dot" aria-hidden="true"></span>
+        <span>NM Engineering</span>
+      </a>
+      <nav class="nav-box" id="nav-desktop" aria-label="Основная навигация"></nav>
+      <div class="header-actions">
+        <a href="contacts.html" class="header-cta" data-track="cta_form" aria-current="page">Обсудить задачу ↗</a>
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-mobile" aria-label="Открыть меню">
+          <span class="menu-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="nav-mobile" aria-label="Мобильная навигация"></nav>
+  </header>
+
+  <main id="main" class="wrapper">
+    <section id="contacts" class="section cross-tl cross-tr" aria-labelledby="contacts-title">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div>
+            <span class="mono accent sec-label">Контакты // Технический запрос</span>
+            <h1 id="contacts-title" style="margin: 14px 0 24px;">
+              Обсудите задачу напрямую с инженерами
+            </h1>
+            <p>
+              Ищете двигатель или силовую установку для своей техники?
+              Нужна модернизация существующего агрегата или разработка нового технического решения?
+              Опишите задачу, условия применения и необходимые характеристики.
+              Мы рассмотрим исходные данные и определим следующий шаг:
+              подбор существующего решения или индивидуальную инженерную проработку.
+            </p>
+          </div>
+
+          <div style="border-top: 1px solid var(--line); padding-top: 28px;">
+            <span class="mono">Формат рассмотрения</span>
+            <p class="prose" style="margin-top: 10px;">
+              Технические запросы рассматривает инженерная команда.
+              Условия дальнейшей работы обсуждаются индивидуально.
+            </p>
+            <div style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px;">
+              <a href="products.html" class="btn btn-ghost">Продукция ↗</a>
+              <a href="rnd.html" class="btn btn-ghost">НИОКР ↗</a>
+            </div>
+            <!-- TODO (перед запуском): добавить подтверждённые контакты и политику ПДн -->
+          </div>
+        </div>
+
+        <form class="contact-form" id="tech-form" novalidate>
+          <span class="mono form-title">Технический запрос // NM Engineering</span>
+
+          <input type="hidden" id="request-direction" name="direction" value="">
+
+          <div class="field">
+            <label for="field-name">Имя и компания</label>
+            <input
+              type="text"
+              id="field-name"
+              name="name"
+              class="input-line"
+              placeholder="Ваше имя / Название компании"
+              autocomplete="organization"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="field-contact">Контакт для связи</label>
+            <input
+              type="text"
+              id="field-contact"
+              name="contact"
+              class="input-line"
+              placeholder="Телефон, Telegram или email"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="request-type">Тип запроса</label>
+            <select id="request-type" name="requestType" class="select-line" required></select>
+          </div>
+
+          <div class="field">
+            <label for="request-message">Описание задачи</label>
+            <textarea
+              id="request-message"
+              name="message"
+              class="textarea-line"
+              placeholder="Опишите назначение, оборудование, необходимые характеристики и ограничения"
+              required
+            ></textarea>
+          </div>
+
+          <div class="field">
+            <span class="mono" style="display:block; margin-bottom: 8px;">Технические материалы</span>
+            <p class="field-hint">
+              Чертежи, ТЗ и спецификации можно передать после первичного контакта —
+              безопасная загрузка файлов будет подключена вместе с сервером приёма запросов.
+            </p>
+          </div>
+
+          <div class="consent field">
+            <input type="checkbox" id="field-consent" name="consent" required>
+            <label for="field-consent">
+              Согласен на обработку персональных данных для рассмотрения обращения.
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-red" id="form-submit" style="width: 100%; justify-content: space-between;">
+            <span>Отправить технический запрос ↗</span>
+          </button>
+
+          <div class="form-status" id="form-status" role="status"></div>
+
+          <p class="form-footnote">
+            Информация используется для рассмотрения вашего обращения.
+            Условия дальнейшей работы обсуждаются индивидуально.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <strong>NM Engineering</strong>
+        <p>Инженерно-производственные решения: двигатели, силовые установки, модернизация и НИОКР.</p>
+      </div>
+      <nav class="footer-nav" id="footer-nav" aria-label="Навигация в подвале"></nav>
+      <div class="footer-meta">© NM Engineering</div>
+    </footer>
+  </main>
+
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
